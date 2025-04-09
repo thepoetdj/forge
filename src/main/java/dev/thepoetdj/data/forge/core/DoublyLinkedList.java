@@ -13,7 +13,7 @@ import java.util.Optional;
  * @author Dhruv Joshi
  * @since 0.1.0
  */
-public final class DoublyLinkedList<T> implements LinkedList<T>, Verifiable {
+public final class DoublyLinkedList<T> implements LinkedList<T> {
     private Node<T> tail;
 
     @Override
@@ -22,7 +22,7 @@ public final class DoublyLinkedList<T> implements LinkedList<T>, Verifiable {
             return false;
         }
         Node<T> next = new Node<>(element);
-        if (!isEmpty()) {
+        if (this.hasElements()) {
             next.prev = this.tail;
             this.tail.next = next;
         }
@@ -32,25 +32,27 @@ public final class DoublyLinkedList<T> implements LinkedList<T>, Verifiable {
 
     @Override
     public Optional<T> remove() {
-        if (isEmpty())
+        if (!this.hasElements())
             return Optional.empty();
-        Node<T> last = this.tail;
-        this.tail = this.tail.prev;
-        if (!isEmpty()) {
+        Optional<T> lastElement = Optional.of(this.tail.element);
+        if (Objects.isNull(this.tail.prev) && Objects.isNull(this.tail.next)) {
+            this.tail = null;
+        } else {
+            this.tail = this.tail.prev;
             this.tail.next = null;
         }
-        return Optional.of(last.element);
+        return lastElement;
     }
 
     @Override
     public Optional<T> last() {
-        if (isEmpty())
-            return Optional.empty();
-        return Optional.of(this.tail.element);
+        return this.hasElements()
+                ? Optional.of(this.tail.element)
+                : Optional.empty();
     }
 
     @Override
-    public boolean isEmpty() {
-        return Objects.isNull(this.tail);
+    public boolean hasElements() {
+        return Objects.nonNull(this.tail);
     }
 }

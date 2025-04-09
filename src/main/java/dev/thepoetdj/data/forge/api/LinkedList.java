@@ -43,4 +43,14 @@ public sealed interface LinkedList<T> permits DoublyLinkedList {
      * @since 0.1.0
      */
     Optional<T> last();
+
+    /**
+     * Checks whether this linked list contains any elements.
+     *
+     * @return {@code true} when there is at least one element present,
+     *         {@code false} otherwise.
+     *
+     * @since 0.2.0
+     */
+    boolean hasElements();
 }
