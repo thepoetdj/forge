@@ -23,8 +23,8 @@ public final class DoublyLinkedList<T> implements LinkedList<T>, Verifiable {
         }
         Node<T> next = new Node<>(element);
         if (!isEmpty()) {
-            next.setPrev(this.tail);
-            this.tail.setNext(next);
+            next.prev = this.tail;
+            this.tail.next = next;
         }
         this.tail = next;
         return true;
@@ -35,18 +35,18 @@ public final class DoublyLinkedList<T> implements LinkedList<T>, Verifiable {
         if (isEmpty())
             return Optional.empty();
         Node<T> last = this.tail;
-        this.tail = this.tail.getPrev();
+        this.tail = this.tail.prev;
         if (!isEmpty()) {
-            this.tail.setNext(null);
+            this.tail.next = null;
         }
-        return Optional.of(last.getElement());
+        return Optional.of(last.element);
     }
 
     @Override
     public Optional<T> last() {
         if (isEmpty())
             return Optional.empty();
-        return Optional.of(this.tail.getElement());
+        return Optional.of(this.tail.element);
     }
 
     @Override

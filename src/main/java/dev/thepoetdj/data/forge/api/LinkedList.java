@@ -43,40 +43,4 @@ public sealed interface LinkedList<T> permits DoublyLinkedList {
      * @since 0.1.0
      */
     Optional<T> last();
-
-    /**
-     * A {@code Node} containing the actual element, and links of the previous
-     * and next {@code Node}s in a list.
-     *
-     * @param <T> Type of element this node can have.
-     *
-     * @since 0.1.0
-     */
-    class Node<T> {
-        private final T element;
-        private Node<T> prev;
-        private Node<T> next;
-
-        public Node(T element) {
-            this.element = element;
-            this.prev = null;
-            this.next = null;
-        }
-
-        public T getElement() {
-            return this.element;
-        }
-
-        public void setNext(Node<T> next) {
-            this.next = next;
-        }
-
-        public Node<T> getPrev() {
-            return this.prev;
-        }
-
-        public void setPrev(Node<T> prev) {
-            this.prev = prev;
-        }
-    }
 }
