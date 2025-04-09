@@ -14,7 +14,7 @@ import java.util.Optional;
  * @author Dhruv Joshi
  * @since 0.1.0
  */
-public final class LinkedListStack<T> implements Stack<T>{
+public final class LinkedListStack<T> implements Stack<T> {
     LinkedList<T> top;
 
     public LinkedListStack() {

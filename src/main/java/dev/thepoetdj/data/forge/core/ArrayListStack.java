@@ -14,7 +14,7 @@ import java.util.Optional;
  * @author Dhruv Joshi
  * @since 0.1.0
  */
-public final class ArrayListStack<T> implements Stack<T>, Verifiable {
+public final class ArrayListStack<T> implements Stack<T> {
     private final List<T> elements;
     private final int capacity;
 
@@ -39,20 +39,19 @@ public final class ArrayListStack<T> implements Stack<T>, Verifiable {
 
     @Override
     public Optional<T> pop() {
-        if (isEmpty())
-            return Optional.empty();
-        return Optional.of(this.elements.removeLast());
+        return this.isEmpty()
+                ? Optional.empty()
+                : Optional.of(this.elements.removeLast());
     }
 
     @Override
     public Optional<T> peek() {
-        if (isEmpty())
-            return Optional.empty();
-        return Optional.of(this.elements.getLast());
+        return this.isEmpty()
+                ? Optional.empty()
+                : Optional.of(this.elements.getLast());
     }
 
-    @Override
-    public boolean isEmpty() {
+    private boolean isEmpty() {
         return this.elements.isEmpty();
     }
 }
