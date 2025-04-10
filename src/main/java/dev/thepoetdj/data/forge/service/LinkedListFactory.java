@@ -10,15 +10,14 @@ import dev.thepoetdj.data.forge.core.DoublyLinkedList;
  * @since 0.1.0
  */
 public final class LinkedListFactory {
-    /**
-     * Initialize a linked list that can be traversed in both directions.
-     *
-     * @return a bidirectional {@code LinkedList}.
-     * @param <T> Type of stored elements.
-     *
-     * @since 0.1.0
-     */
-    public static <T> LinkedList<T> bi() {
-        return new DoublyLinkedList<>();
-    }
+  /**
+   * Initialize a linked list that can be traversed in both directions.
+   *
+   * @return a bidirectional {@code LinkedList}.
+   * @param <T> Type of stored elements.
+   * @since 0.1.0
+   */
+  public static <T> LinkedList<T> bi() {
+    return new DoublyLinkedList<>();
+  }
 }
