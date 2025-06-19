@@ -2,7 +2,6 @@ package dev.thepoetdj.data.forge.service;
 
 import dev.thepoetdj.data.forge.api.Stack;
 import dev.thepoetdj.data.forge.core.ArrayStack;
-import dev.thepoetdj.data.forge.core.LinkedListStack;
 import java.util.Optional;
 
 /**
@@ -24,17 +23,5 @@ public final class StackFactory {
   public static <T> Optional<Stack<T>> create(int capacity) {
     if (capacity <= 0) return Optional.empty();
     return Optional.of(new ArrayStack<>(capacity));
-  }
-
-  /**
-   * Initializes a {@link Stack} with no predefined capacity. The stack will be allowed to grow dynamically, limited
-   * only by the available free memory of the underlying system.
-   *
-   * @param <T> Type of stored elements.
-   * @return a dynamically growable {@code Stack}.
-   * @since 0.1.0
-   */
-  public static <T> Stack<T> create() {
-    return new LinkedListStack<>();
   }
 }
