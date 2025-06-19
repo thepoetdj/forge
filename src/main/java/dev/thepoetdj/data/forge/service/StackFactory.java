@@ -1,7 +1,7 @@
 package dev.thepoetdj.data.forge.service;
 
 import dev.thepoetdj.data.forge.api.Stack;
-import dev.thepoetdj.data.forge.core.ArrayListStack;
+import dev.thepoetdj.data.forge.core.ArrayStack;
 import dev.thepoetdj.data.forge.core.LinkedListStack;
 import java.util.Optional;
 
@@ -23,7 +23,7 @@ public final class StackFactory {
    */
   public static <T> Optional<Stack<T>> create(int capacity) {
     if (capacity <= 0) return Optional.empty();
-    return Optional.of(new ArrayListStack<>(capacity));
+    return Optional.of(new ArrayStack<>(capacity));
   }
 
   /**

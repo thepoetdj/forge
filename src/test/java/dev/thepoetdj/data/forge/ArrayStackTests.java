@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-class ArrayListStackTests {
+class ArrayStackTests {
   @ParameterizedTest
   @ValueSource(ints = {Integer.MIN_VALUE, 0})
   void itShouldNotAllow_toInitializeStack_withInvalidCapacity(int capacity) {
@@ -19,7 +19,7 @@ class ArrayListStackTests {
   }
 
   @Nested
-  class InitializedArrayListStackTests {
+  class InitializedArrayStackTests {
     private static final int TEST_CAPACITY = 5;
     Stack<Integer> result;
 

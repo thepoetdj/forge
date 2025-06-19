@@ -1,6 +1,6 @@
 package dev.thepoetdj.data.forge.api;
 
-import dev.thepoetdj.data.forge.core.ArrayListStack;
+import dev.thepoetdj.data.forge.core.ArrayStack;
 import dev.thepoetdj.data.forge.core.LinkedListStack;
 import java.util.Optional;
 
@@ -11,7 +11,7 @@ import java.util.Optional;
  * @author Dhruv Joshi
  * @since 0.1.0
  */
-public sealed interface Stack<T> permits ArrayListStack, LinkedListStack {
+public sealed interface Stack<T> permits ArrayStack, LinkedListStack {
   /**
    * Stores the {@code element} at the top of this stack.
    *
