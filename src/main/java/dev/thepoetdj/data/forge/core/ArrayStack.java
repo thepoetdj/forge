@@ -8,7 +8,7 @@ import java.util.Optional;
  *
  * @param <T> Type of stored elements of the underlying list.
  * @author Dhruv Joshi
- * @since 0.1.0
+ * @since 0.2.0
  */
 public final class ArrayStack<T> implements Stack<T> {
   private static final int EMPTY = -1;
@@ -20,7 +20,7 @@ public final class ArrayStack<T> implements Stack<T> {
    * Constructs an instance of the {@code ArrayStack} with given capacity.
    *
    * @param capacity the total capacity of this stack.
-   * @since 0.1.0
+   * @since 0.2.0
    */
   public ArrayStack(int capacity) {
     this.elements = new Object[capacity];
