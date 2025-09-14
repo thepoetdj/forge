@@ -2,6 +2,15 @@
 
 A space to **_forge_** and experiment with various data structures and algorithms using modern Java features.
 
+There are certain rules to be followed while "forging":
+
+- Avoid exceptions
+  - an exception in method contract => leaving the fate in the hands of an end user
+- Use latest language features wherever possible
+  - learn how, when and where to use Java 9+ features
+- Problem oriented approach
+  - consider real problems in test cases
+
 ## Instructions
 
 ### Minimum Requirements
